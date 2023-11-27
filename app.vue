@@ -1,24 +1,38 @@
 <template>
   <main class="">
-    <h1 class="text-3xl font-bold p-5 flex justify-center">
+    <h1 class="text-5xl font-bold p-10 flex justify-center">
       ToDoアプリ
     </h1>
-    <section class="">
-      <h2 class="flex justify-center">Todo List</h2>
-      <div class="flex justify-center">
-        <ul>
-          <li v-for="todo in todoStore.todoList" :key="todo.id">
-            <input type="checkbox" v-model="todo.isDone" @change="completeTodo(todo.id)">
+    <div class="flex justify-center ">
+      <ul class="w-[60vw]">
+        <li v-for="todo in todoStore.todoList" :key="todo.id" class="p-2 flex m-2">
+          <p class="border-2 border-black rounded-xl text-4xl w-7/12 h-20 flex justify-center items-center">
             {{ todo.name }}
-            <button @click="deleteTodo(todo.id)">削除</button>
-          </li>
-          <li>
-            <input v-model="newTodo" class=" border border-black">
-            <button @click="addTodo">追加</button>
-          </li>
-        </ul>
-      </div>
-    </section>
+          </p>
+          <div class="w-[300px] flex justify-center items-center">
+            <input type="checkbox" v-model="todo.isDone" class=" checkbox w-1/2">
+            <label for="checkbox" class="text-3xl w-1/2">
+              {{ todo.isDone ? "完了" : "未完了" }}
+            </label>
+          </div>
+          <div class="flex items-center w-[100px]">
+            <button @click="deleteTodo(todo.id)" class=" rounded-xl text-xl text-white bg-red-600 w-full h-16">
+              削除
+            </button>
+          </div>
+        </li>
+        <li class="p-2 flex m-2">
+          <input v-model="newTodo"
+            class=" border-2 border-black  rounded-xl text-4xl bg-slate-200 w-7/12 h-20 flex  text-center">
+          <div class="w-[300px] "></div>
+          <div class="flex items-center w-[100px]">
+            <button @click="addTodo" class=" rounded-xl text-xl text-white bg-blue-800 w-full h-16">
+              追加
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
   </main>
 </template>
 
@@ -31,20 +45,15 @@ const newTodo = ref<string>('')
 
 const addTodo = () => {
   if (newTodo.value === '') {
-    // Todo: alertを出す
+    alert("タスクを入力してください。")
   } else {
     todoStore.add(newTodo.value)
     newTodo.value = ''
   }
 }
 
-const completeTodo = (id: string) => {
-  todoStore.complete(id)
-}
-
 const deleteTodo = (id: string) => {
   todoStore.delete(id)
 }
-
 
 </script>

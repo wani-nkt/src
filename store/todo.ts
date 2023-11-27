@@ -20,17 +20,9 @@ export const useTodoStore = defineStore('todoStore', {
                 isDone: false
             })
         },
-        complete(id: string) {
-            this.todoList.forEach(todo => {
-                if (todo.id == id) {
-                    todo.isDone = !todo.isDone
-                }
-            })
-        },
         delete(id: string) {
             const index = this.todoList.findIndex(todo => todo.id == id)
             this.todoList.splice(index, 1)
-
         }
     }
 })
