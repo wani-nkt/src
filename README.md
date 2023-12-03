@@ -1,6 +1,7 @@
 # ToDo app
 
 - [Nuxt 3 Minimal Starter (起動方法)](#nuxt-3-minimal-starter)
+	- Node.jsのバージョン18.18.2使用しています。
 - [制作メモ](#制作メモ)
 
 ## Nuxt 3 Minimal Starter
