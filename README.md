@@ -1,8 +1,13 @@
-# Nuxt 3 Minimal Starter
+# ToDo app
+
+- [Nuxt 3 Minimal Starter (起動方法)](#nuxt-3-minimal-starter)
+- [制作メモ](#制作メモ)
+
+## Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Setup
+### Setup
 
 Make sure to install the dependencies:
 
@@ -20,7 +25,7 @@ yarn install
 bun install
 ```
 
-## Development Server
+### Development Server
 
 Start the development server on `http://localhost:3000`:
 
@@ -38,7 +43,7 @@ yarn dev
 bun run dev
 ```
 
-## Production
+### Production
 
 Build the application for production:
 
@@ -73,3 +78,31 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## 制作メモ
+### 作業
+- デザイン案を考える。
+![デザイン](design.png)
+
+- Nuxt3の動作環境(Node.js - v18.0.0 or newer)に合わせてnode ver 18.18.2をインストール
+
+- nuxtプロジェクトの作成
+	- 画面上の指示に従って進める。ついでにtailwind cssもインストールした
+```bash
+$ npx nuxi@latest init <project-name>
+``` 
+- tailwind css 公式のガイドに従って設定
+- pinia公式ガイドに従ってpiniaをインストール＆設定
+- 公式ページや参考ページを見ながらデザイン案に合わせてページを作成
+- ページが完成
+![完成したページ](image.png)
+
+### 参考ページ
+- 参考：Nuxt3で簡単なToDoアプリを作っていく 〜リストレンダリング・イベントハンドリング〜
+	- https://qiita.com/nishikor/items/3ca4c42d14edecd5a06f
+- 参考：Nuxt3を使ってみる
+	- https://zenn.dev/bosushi/scraps/bd416abe14f6a4
+- HTML要素リファレンス
+	- https://developer.mozilla.org/ja/docs/Web/HTML/Element
+- display: noneを使ってCheckboxを実装するのはやめようね。
+	- https://qiita.com/Tksn07/items/fe778ed407da1bdc0d69
